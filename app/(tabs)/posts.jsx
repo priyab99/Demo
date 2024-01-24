@@ -7,6 +7,7 @@ const HomeScreen = () => {
   const [posts, setPosts] = useState([
     {
       id: 1,
+      UserName: "Kriti",
       title: 'Feeling Sad',
       description: 'I am feeling very low today. My thougts are not okay. I dont know what to do',
       imageUrl: 'https://media.glamourmagazine.co.uk/photos/6274ec0e46a1a79c69ae3ccf/16:9/w_2560%2Cc_limit/HIGH%2520FUNCTIONING%2520DEPRESSION%2520090221%2520%2520%2520GettyImages-1301653190_SF.jpg',
@@ -17,6 +18,7 @@ const HomeScreen = () => {
     },
     {
       id: 2,
+      UserName: "Ria",
       title: 'Financial Struggle',
       description: 'I dont have enough money right now. I dont know how will i get money.',
       imageUrl: 'https://media.glamourmagazine.co.uk/photos/6274ec0e46a1a79c69ae3ccf/16:9/w_2560%2Cc_limit/HIGH%2520FUNCTIONING%2520DEPRESSION%2520090221%2520%2520%2520GettyImages-1301653190_SF.jpg',
@@ -25,7 +27,18 @@ const HomeScreen = () => {
       comments: [],
       rating: 0,
     },
-    // Add more posts as needed
+    {
+      id: 3,
+      UserName: "Mamun",
+      title: 'Academic Pressure',
+      description: 'I am dealing with too much pressure. I dont know how to keep up with the current education process of our university.',
+      imageUrl: 'https://media.glamourmagazine.co.uk/photos/6274ec0e46a1a79c69ae3ccf/16:9/w_2560%2Cc_limit/HIGH%2520FUNCTIONING%2520DEPRESSION%2520090221%2520%2520%2520GettyImages-1301653190_SF.jpg',
+      likes: 0,
+      dislikes: 0,
+      comments: [],
+      rating: 0,
+    },
+  
   ]);
 
   const handleLike = (postId) => {
@@ -66,6 +79,7 @@ const HomeScreen = () => {
       {posts.map((post) => (
       
         <TouchableOpacity key={post.id} style={styles.card}>
+            <Text style={styles.UserName}>{post.UserName}</Text>
             
             <Text style={styles.title}>{post.title}</Text>
           
